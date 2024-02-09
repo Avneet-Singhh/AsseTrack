@@ -1,0 +1,73 @@
+.container .delete-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 200px auto;
+}
+
+.container .delete-container h3 {
+    color: #333;
+}
+
+.container .delete-container hr {
+    border-color: #ccc;
+}
+
+.container .delete-container .delete-alert {
+    background-color: #f8d7da; /* Red background color */
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid #f5c6cb; /* Border color */
+    border-radius: 4px;
+    text-align: center;
+}
+
+.container .delete-container .delete-alert h4 {
+    color: #721c24; /* Dark red text color */
+}
+
+.container .delete-container form {
+    margin-top: 10px;
+}
+
+.container .delete-container .btn-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container .delete-container .btn-container button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.container .delete-container .btn-container a {
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.container .delete-container .btn-container .delete-button {
+    background-color: #dc3545; 
+    color: #fff; 
+}
+
+.container .delete-container .btn-container .delete-button:hover {
+    background-color: #c82333; 
+}
+
+.container .delete-container .btn-container a {
+    background-color: #007bff; 
+    color: #fff; 
+}
+
+.container .delete-container .btn-container a:hover {
+    background-color: #0056b3; 
+}

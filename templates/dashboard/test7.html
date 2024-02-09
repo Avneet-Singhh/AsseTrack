@@ -1,0 +1,818 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        /* Google Font Import - Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            /* ===== Colors ===== */
+            --body-color: #E4E9F7;
+            --sidebar-color: #FFF;
+            --primary-color: #695CFE;
+            --primary-color-light: #F6F5FF;
+            --toggle-color: #DDD;
+            --text-color: #707070;
+
+            /* ====== Transition ====== */
+            --tran-03: all 0.2s ease;
+            --tran-03: all 0.3s ease;
+            --tran-04: all 0.3s ease;
+            --tran-05: all 0.3s ease;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: var(--body-color) !important;
+            transition: var(--tran-05);
+        }
+
+        ::selection {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        body.dark {
+            --body-color: #18191a;
+            --sidebar-color: #242526;
+            --primary-color: #3a3b3c;
+            --primary-color-light: #3a3b3c;
+            --toggle-color: #fff;
+            --text-color: #ccc;
+        }
+
+        /* ===== Sidebar ===== */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 250px;
+            padding: 10px 14px;
+            background: var(--sidebar-color);
+            transition: var(--tran-05);
+            z-index: 100;
+        }
+
+        .sidebar.close {
+            width: 88px;
+        }
+
+        /* ===== Reusable code - Here ===== */
+        .sidebar li {
+            height: 50px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .sidebar header .image,
+        .sidebar .icon {
+            min-width: 60px;
+            border-radius: 6px;
+        }
+
+        .sidebar .icon {
+            min-width: 60px;
+            border-radius: 6px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .sidebar .text,
+        .sidebar .icon {
+            color: var(--text-color);
+            transition: var(--tran-03);
+        }
+
+        .sidebar .text {
+            font-size: 17px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 1;
+        }
+
+        .sidebar.close .text {
+            opacity: 0;
+        }
+
+        /* =========================== */
+
+        .sidebar header {
+            position: relative;
+        }
+
+        .sidebar header .image-text {
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar header .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header .image-text .name {
+            margin-top: 2px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        header .image-text .profession {
+            font-size: 16px;
+            margin-top: -2px;
+            display: block;
+        }
+
+        .sidebar header .image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar header .image img {
+            width: 40px;
+            border-radius: 6px;
+        }
+
+        .sidebar header .toggle {
+            position: absolute;
+            top: 50%;
+            right: -25px;
+            transform: translateY(-50%) rotate(180deg);
+            height: 25px;
+            width: 25px;
+            background-color: var(--primary-color);
+            color: var(--sidebar-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            cursor: pointer;
+            transition: var(--tran-05);
+        }
+
+        body.dark .sidebar header .toggle {
+            color: var(--text-color);
+        }
+
+        .sidebar.close .toggle {
+            transform: translateY(-50%) rotate(0deg);
+        }
+
+        .sidebar .menu {
+            margin-top: 40px;
+        }
+
+        .sidebar li.search-box {
+            border-radius: 6px;
+            background-color: var(--primary-color-light);
+            cursor: pointer;
+            transition: var(--tran-05);
+        }
+
+        .sidebar li.search-box input {
+            height: 100%;
+            width: 100%;
+            outline: none;
+            border: none;
+            background-color: var(--primary-color-light);
+            color: var(--text-color);
+            border-radius: 6px;
+            font-size: 17px;
+            font-weight: 500;
+            transition: var(--tran-05);
+        }
+
+        .sidebar li a {
+            list-style: none;
+            height: 100%;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: var(--tran-03);
+        }
+
+        .sidebar li a:hover {
+            background-color: var(--primary-color);
+        }
+
+        .sidebar li a:hover .icon,
+        .sidebar li a:hover .text {
+            color: var(--sidebar-color);
+        }
+
+        body.dark .sidebar li a:hover .icon,
+        body.dark .sidebar li a:hover .text {
+            color: var(--text-color);
+        }
+
+        .sidebar .menu-bar {
+            height: calc(100% - 55px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-y: scroll;
+        }
+
+        .menu-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .sidebar .menu-bar .mode {
+            border-radius: 6px;
+            background-color: var(--primary-color-light);
+            position: relative;
+            transition: var(--tran-05);
+        }
+
+        .menu-bar .mode .sun-moon {
+            height: 50px;
+            width: 60px;
+        }
+
+        .mode .sun-moon i {
+            position: absolute;
+        }
+
+        .mode .sun-moon i.sun {
+            opacity: 0;
+        }
+
+        body.dark .mode .sun-moon i.sun {
+            opacity: 1;
+        }
+
+        body.dark .mode .sun-moon i.moon {
+            opacity: 0;
+        }
+
+        .menu-bar .bottom-content .toggle-switch {
+            position: absolute;
+            right: 0;
+            height: 100%;
+            min-width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .toggle-switch .switch {
+            position: relative;
+            height: 22px;
+            width: 40px;
+            border-radius: 25px;
+            background-color: var(--toggle-color);
+            transition: var(--tran-05);
+        }
+
+        .switch::before {
+            content: '';
+            position: absolute;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            background-color: var(--sidebar-color);
+            transition: var(--tran-04);
+        }
+
+        body.dark .switch::before {
+            left: 20px;
+        }
+
+        .nav-icon {
+            margin-left: 20px !important;
+            font-size: 1.5em !important;
+        }
+
+        .home {
+            position: absolute;
+            top: 0;
+            top: 0;
+            left: 250px;
+            height: 100vh;
+            width: calc(100% - 250px);
+            background-color: var(--body-color);
+            transition: var(--tran-05);
+        }
+
+        .home .text {
+            font-size: 30px;
+            font-weight: 500;
+            color: var(--text-color);
+            padding: 12px 60px;
+        }
+
+        .sidebar.close~.home {
+            left: 78px;
+            height: 100vh;
+            width: calc(100% - 78px);
+        }
+
+        body.dark .home .text {
+            color: var(--text-color);
+        }
+
+        .brand-card-box {
+            /* margin: 20px; */
+            /* margin-top: 30px; */
+            /* margin-left: 230px; */
+            width: 1300px;
+            height: 160px;
+        }
+
+        .brand-card-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .brand-card {
+            font-family: sans-serif;
+            width: 300px;
+            height: 130px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            /* margin-top: 13px; */
+            position: relative;
+            background-color: white;
+        }
+
+        .brand-card-content h2 {
+            margin: 10px;
+            font-weight: 600;
+        }
+
+        .brand-card-content h3 {
+            margin-top: 15px;
+            margin-left: 10px;
+            font-weight: 600;
+            font-size: 27px;
+            color: #36A2EB;
+            /* Match the box-shadow color */
+        }
+
+        .brand-card:nth-child(1) {
+            box-shadow: -8px 0 0 #36A2EB, 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand-card:nth-child(2) h3 {
+            color: #F7CA18;
+        }
+
+        .brand-card:nth-child(3) h3 {
+            color: #3EDCDF;
+        }
+
+        .brand-card:nth-child(4) h3 {
+            color: #8D54FF;
+        }
+
+        .brand-card:nth-child(2) {
+            box-shadow: -8px 0 0 #F7CA18, 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand-card:nth-child(3) {
+            box-shadow: -8px 0 0 #3EDCDF, 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand-card:nth-child(4) {
+            box-shadow: -8px 0 0 #8D54FF, 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Style for the circle container */
+        .brand-card-content .brand-card-icon {
+            position: absolute;
+            top: 60%;
+            right: 10px;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: white;
+        }
+
+        /* Remove underline from links in headers */
+        .brand-card a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .graph_container {
+            margin-bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* min-height: 50vh; */
+        }
+
+        .graph-container {
+            margin: 0 40px;
+            margin-bottom: 15px;
+        }
+
+        .graph {
+            width: 570px;
+            height: 500px;
+            margin: 0;
+            background-color: whitesmoke;
+        }
+
+        .graph-1 {
+            text-align: center;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .graph-2 {
+            text-align: center;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .graph-title {
+            color: royalblue;
+            padding: 5px;
+            background-color: #ddedfa;
+            border-bottom: 1px solid #ccc;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--body-color);
+            padding: 20px 20px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .footer-left {
+            flex: 1;
+        }
+
+        .footer-right {
+            flex: 1;
+            text-align: right;
+        }
+
+        .footer-right a {
+            text-decoration: none;
+            color: #444;
+            transition: border-bottom 0.2s;
+        }
+
+        .footer-right a:hover {
+            border-bottom: 1px solid #444;
+        }
+    </style>
+
+    <!--======== CSS ======== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-PRrgQVJ8NNHGieOA1grGdCTIt4h21CzJs6SnWH4YMQ6G5F5+IEzOHz67L4SQaF0o" crossorigin="anonymous">
+
+    <!--<title>Dashboard Sidebar Menu</title>-->
+</head>
+
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="{% static 'images/favicon.ico' %}" alt="logo">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">AsseTrack</span>
+                    <span class="profession">Inventory System</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-grid-alt icon'></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-user-circle icon'></i>
+                            <span class="text nav-text">Profile</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-buildings icon'></i>
+                            <span class="text nav-text">Brands</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-package icon'></i>
+                            <span class="text nav-text">Products</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-user-plus icon'></i>
+                            <span class="text nav-text">Staff</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-cart-alt icon'></i>
+                            <span class="text nav-text">Orders</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#" id="your-logout-button-id">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- <div class="container">
+        
+    </div> -->
+
+    <section class="home">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #E4E9F7 !important; 
+    box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.15); height: 60px;">
+            <div class="container-fluid">
+                <form class="d-flex" role="search" style="margin-left: 20px;">
+                    <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link nav-icon" href="#"><i class='bx bx-bell'></i></a>
+                        <a class="nav-link nav-icon" href="#"><i class='bx bx-envelope bx-2x'></i></a>
+                        <a class="nav-link nav-icon" aria-current="page" href="#"><i
+                                class='bx bx-user-circle bx-2x'></i></a>
+                        <a class="nav-link nav-icon" href="#"><i class='bx bx-cog bx-2x'></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="text">Dashboard</div>
+
+        <div class="container">
+            <div class="brand-card-box">
+                <div class="brand-card-container">
+                    <div class="brand-card">
+                        <a href="#">
+                            <div class="brand-card-content">
+                                <h3>Count of all Products</h3>
+                                <h2>3 Products</h2>
+                                <div class="brand-card-icon" style="background-color: #36A2EB;">
+                                    <i class='bx bx-package'></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="brand-card">
+                        <a href="#">
+                            <div class="brand-card-content">
+                                <h3>Count of Staff</h3>
+                                <h2>2 Staff</h2>
+                                <div class="brand-card-icon" style="background-color: #F7CA18;">
+                                    <i class='bx bx-user-plus'></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="brand-card">
+                        <a href="#">
+                            <div class="brand-card-content">
+                                <h3>Count of Orders</h3>
+                                <h2>2 Orders</h2>
+                                <div class="brand-card-icon" style="background-color: #3EDCDF;">
+                                    <i class='bx bx-cart-alt'></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="brand-card">
+                        <a href="#">
+                            <div class="brand-card-content">
+                                <h3>Count of all Brands</h3>
+                                <h2>2 Brands</h2>
+                                <div class="brand-card-icon" style="background-color: #8D54FF;">
+                                    <i class='bx bx-buildings'></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="graph_container">
+                <div class="graph-container">
+                    <div class="graph-1">
+                        <div class="graph-title">
+                            <h3>Orders-Graph</h3>
+                        </div>
+                        <div class="graph">
+                            <canvas id="barchart" width="500" height="450" style="margin: 0;"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="graph-container" style="color: rgb(14, 173, 105)">
+                    <div class="graph-2">
+                        <div class="graph-title">
+                            <h3>Products-Graph</h3>
+                        </div>
+                        <div class="graph">
+                            <canvas id="doughnut" width="500" height="400" style="margin: 0;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            const ctx1 = document.getElementById('barchart').getContext('2d');
+            new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        borderWidth: 1,
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            const ctx2 = document.getElementById('doughnut').getContext('2d');
+            new Chart(ctx2, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [12, 19, 3, 5, 2, 3],
+                        borderWidth: 1,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(0, 240, 212, 1)',
+                            'rgba(245, 143, 171, 1)',
+                            'rgba(74, 213, 105, 1)',
+                        ]
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+
+        <footer>
+            <div class="footer-left">
+                Copyright © Your Website 2023
+            </div>
+            <div class="footer-right">
+                <a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a>
+            </div>
+        </footer>
+    </section>
+
+    <script>
+        const body = document.querySelector('body'),
+            sidebar = body.querySelector('nav'),
+            toggle = body.querySelector(".toggle"),
+            searchBtn = body.querySelector(".search-box"),
+            modeSwitch = body.querySelector(".toggle-switch"),
+            modeText = body.querySelector(".mode-text");
+
+
+        toggle.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        })
+
+        searchBtn.addEventListener("click", () => {
+            sidebar.classList.remove("close");
+        })
+
+        modeSwitch.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            if (body.classList.contains("dark")) {
+                modeText.innerText = "Light mode";
+            } else {
+                modeText.innerText = "Dark mode";
+
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

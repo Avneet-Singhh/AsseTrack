@@ -1,0 +1,202 @@
+/* .content-wrapper {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+}
+
+.form-container {
+    margin-top: 50px;
+    margin-left: 220px;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+}
+
+.form-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-container button[type="submit"] {
+    align-items: center;
+    background-color: #1cb41c;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.form-container button[type="submit"]:hover {
+    background-color: #137913;
+} */
+
+/* .table-container {
+    width: calc(100% - 450px); 
+    padding-left: 20px; 
+} */
+
+/* .table {
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 90%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+/* .table th,
+.table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #015182;
+    color: whitesmoke;
+    border-bottom: 1px solid #ccc;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-container a.Delete {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-right: 5px;
+    text-decoration: none; 
+}
+
+.table-container a.Edit {
+    background-color: #1cb41c; 
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.table-container a.Delete:hover {
+    background-color: #c82333;
+}
+
+.table-container a.Edit:hover {
+    background-color: #199719;
+} */
+
+.product-card-box {
+    /* margin: 20px; */
+    /* margin-top: 30px; */
+    /* margin-left: 230px; */
+    width: 650px;
+    height: 130px;
+    margin-left: 50px;
+}
+
+.product-card-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-card {
+    /* font-family: sans-serif; */
+    width: 300px;
+    height: 130px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    /* margin-top: 13px; */
+    position: relative;
+    background-color: white;
+}
+
+.product-card-content h2 {
+    margin: 10px;
+    font-weight: 600;
+}
+
+.product-card-content h3 {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 24px;
+    color: #36A2EB;
+    /* Match the box-shadow color */
+}
+
+.product-card:nth-child(2) h3 {
+    color: #FF9F40;
+}
+
+.product-card:nth-child(1) {
+    box-shadow: -8px 0 0 #36A2EB, 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.product-card:nth-child(2) {
+    box-shadow: -8px 0 0 #FF9F40, 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Style for the circle container */
+.product-card-content .product-card-icon {
+    position: absolute;
+    top: 60%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+/* Remove underline from links in headers */
+.product-card a {
+    text-decoration: none;
+    color: black;
+}
+
+.product-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px; /* Add margin for spacing between the form and the table */
+}
+.product-form {
+    flex: 0 0 auto; /* Prevent form from shrinking */
+    margin-right: 40px; /* Add margin to the right of the form container */
+}
+.product-table {
+    border: 2px solid #ccc;
+    padding: 20px;
+    width: 100%;
+    background: white;
+}

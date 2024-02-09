@@ -1,0 +1,50 @@
+{% extends "partials/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Update Page{% endblock title %}
+
+{% block body %}
+
+
+
+<section class="home">
+    {% include "partials/navbar.html" %}
+
+    <div class="container">
+        <div class="delete-container">
+            <h3>Update Brand</h3>
+            <hr>
+            <div class="Edit-form">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="btn-container">
+                        <a class="btn btn-secondary" href="{% url 'dashboard-brand' %}">Cancel</a>
+                        <button class="btn btn-success" type="submit">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="footer-left">
+            Copyright © Your Website 2023
+        </div>
+        <div class="footer-right">
+            <a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a>
+        </div>
+    </footer>
+
+</section>
+
+{% endblock body %}

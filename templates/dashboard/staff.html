@@ -1,0 +1,147 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %}Staff{% endblock title %}
+
+{% block body %}
+
+<!-- <div class="container">
+    <div class="staff_table">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Avneet</td>
+                    <td>Singh</td>
+                    <td>Male</td>
+                    <td>123456789</td>
+                    <td>avneet@example.com</td>
+                    <td><button class="view-button">View</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Satyam</td>
+                    <td>Sakral</td>
+                    <td>Male</td>
+                    <td>123456789</td>
+                    <td>satyam@example.com</td>
+                    <td><button class="view-button">View</button></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</div> -->
+
+<section class="home">
+    {% include "partials/navbar.html" %}
+
+    <div class="text">Staff Details</div>
+
+    <div class="staff-container">
+        <div class="staff-card-box">
+            <div class="staff-card-container">
+
+                <div class="staff-card">
+                    <a href="#">
+                        <div class="staff-card-content">
+                            <h3>Count of all Staff</h3>
+                            <h2>4 Staff</h2>
+                            <div class="staff-card-icon" style="background-color: #F7CA18;">
+                                <i class='bx bx-user-plus'></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin: 0;">
+        <div class="staff-table" style="background-color: white;">
+            <table id="example" class="table table-striped nowrap" style="width:100%">
+                <thead style="background: #0d6efd;">
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Profile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Avneet</td>
+                        <td>Singh</td>
+                        <td>Male</td>
+                        <td>42069-42069</td>
+                        <td>avneet@example.com</td>
+                        <td><a class="btn btn-primary btn-sm" href="#">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Satyam</td>
+                        <td>Sakral</td>
+                        <td>Male</td>
+                        <td>42069-42069</td>
+                        <td>satyam@example.com</td>
+                        <td><a class="btn btn-primary btn-sm" href="#">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Aniket</td>
+                        <td>Singh</td>
+                        <td>Male</td>
+                        <td>42069-42069</td>
+                        <td>aniket@example.com</td>
+                        <td><a class="btn btn-primary btn-sm" href="#">View</a></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Ansh</td>
+                        <td>Bhatia</td>
+                        <td>Male</td>
+                        <td>42069-42069</td>
+                        <td>ansh@example.com</td>
+                        <td><a class="btn btn-primary btn-sm" href="#">View</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="footer-left">
+            Copyright © Your Website 2023
+        </div>
+        <div class="footer-right">
+            <a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a>
+        </div>
+    </footer>
+
+</section>
+
+{% endblock body %}

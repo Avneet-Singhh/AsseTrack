@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-PRrgQVJ8NNHGieOA1grGdCTIt4h21CzJs6SnWH4YMQ6G5F5+IEzOHz67L4SQaF0o" crossorigin="anonymous">
+
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        *{
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+        }
+        .brand-card-box {
+            /* margin: 20px; */
+            /* margin-top: 30px; */
+            /* margin-left: 230px; */
+            width: 1300px;
+            height: 160px;
+        }
+
+        .brand-card-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .brand-card {
+            font-family: sans-serif;
+            width: 300px;
+            height: 130px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            margin-top: 13px;
+            position: relative;
+            background-color: white;
+        }
+
+        .brand-card-content h2 {
+            margin: 10px;
+            font-weight: 600;
+        }
+
+        .brand-card-content h3 {
+            margin-top: 15px;
+            margin-left: 10px;
+            font-weight: 600;
+            color: #0D6EFD;
+            /* Match the box-shadow color */
+        }
+
+        .brand-card:nth-child(1) {
+            box-shadow: -8px 0 0 #0D6EFD, 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand-card:nth-child(2) h3 {
+            color: #F7CA18;
+        }
+
+        .brand-card:nth-child(3) h3 {
+            color: #3EDCDF;
+        }
+
+        .brand-card:nth-child(4) h3 {
+            color: #8D54FF;
+        }
+
+        .brand-card:nth-child(2) {
+            box-shadow: -8px 0 0 #F7CA18, 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand-card:nth-child(3) {
+            box-shadow: -8px 0 0 #3EDCDF, 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand-card:nth-child(4) {
+            box-shadow: -8px 0 0 #8D54FF, 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Style for the circle container */
+        .brand-card-content .brand-card-icon {
+            position: absolute;
+            top: 60%;
+            right: 10px;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: white;
+        }
+
+        /* Remove underline from links in headers */
+        .brand-card a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="brand-card-box">
+            <div class="brand-card-container">
+                <div class="brand-card">
+                    <a href="#">
+                        <div class="brand-card-content">
+                            <h3>Count of all Products</h3>
+                            <h2>3 Products</h2>
+                            <div class="brand-card-icon" style="background-color: #0D6EFD;">
+                                <i class='bx bx-package'></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+    
+                <div class="brand-card">
+                    <a href="#">
+                        <div class="brand-card-content">
+                            <h3>Count of Staff</h3>
+                            <h2>2 Staff</h2>
+                            <div class="brand-card-icon" style="background-color: #F7CA18;">
+                                <i class='bx bx-user-plus'></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="brand-card">
+                    <a href="#">
+                        <div class="brand-card-content">
+                            <h3>Count of Orders</h3>
+                            <h2>2 Orders</h2>
+                            <div class="brand-card-icon" style="background-color: #3EDCDF;">
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="brand-card">
+                    <a href="#">
+                        <div class="brand-card-content">
+                            <h3>Count of all Brands</h3>
+                            <h2>2 Brands</h2>
+                            <div class="brand-card-icon" style="background-color: #8D54FF;">
+                                <i class='bx bx-buildings'></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

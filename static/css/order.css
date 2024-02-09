@@ -1,0 +1,91 @@
+/* .order_table table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-left: 230px;
+}
+
+.order_table th {
+    background-color: #015182;
+    color: whitesmoke;
+    font-weight: bold;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.order_table td {
+    padding: 20px;
+    border: 1px solid #ddd;
+} */
+
+.order-card-box {
+    /* margin: 20px; */
+    /* margin-top: 30px; */
+    /* margin-left: 230px; */
+    width: 350px;
+    height: 130px;
+    margin-left: 50px;
+}
+
+.order-card-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-card {
+    /* font-family: sans-serif; */
+    width: 300px;
+    height: 130px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    /* margin-top: 13px; */
+    position: relative;
+    background-color: white;
+}
+
+.order-card-content h2 {
+    margin: 10px;
+    font-weight: 600;
+}
+
+.order-card-content h3 {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 24px;
+    color: #3EDCDF;
+}
+
+.order-card:nth-child(1) {
+    box-shadow: -8px 0 0 #3EDCDF, 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.order-card-content .order-card-icon {
+    position: absolute;
+    top: 60%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+.order-card a {
+    text-decoration: none;
+    color: black;
+}
+
+.order-table {
+    margin: 40px 0px 40px 30px;
+    border: 2px solid #ccc;
+    padding: 20px;
+    width: 100%;
+    background: white;
+}

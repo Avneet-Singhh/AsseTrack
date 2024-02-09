@@ -1,0 +1,84 @@
+.content-wrapper {
+    display: flex;
+    flex-direction: row; /* Arrange content in a row */
+    justify-content: space-between; /* Add space between form and table */
+    align-items: flex-start; /* Align items at the top */
+}
+
+/* CSS for the form container */
+.order-form {
+    margin-top: 50px;
+    margin-left: 220px;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.order-form h2 {
+    margin-bottom: 20px;
+}
+
+.order-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.order-form input[type="text"],
+.order-form input[type="number"],
+.order-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.order-form button[type="submit"] {
+    align-items: center;
+    background-color: #1cb41c;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.order-form button[type="submit"]:hover {
+    background-color: #137913;
+}
+
+.user-table {
+    width: calc(100% - 450px); /* Adjust the width to fit your layout */
+    padding-left: 20px; /* Add spacing between form and table */
+}
+
+/* CSS for the table */
+.user-order-table {
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 90%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-order-table th,
+.user-order-table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.user-order-table th {
+    background-color: #5f8b67;
+    color: whitesmoke;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-order-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

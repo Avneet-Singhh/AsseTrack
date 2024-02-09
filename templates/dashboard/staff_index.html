@@ -1,0 +1,71 @@
+{% load static %}
+
+<!-- Sidebar -->
+<div class="container">
+    <div class="wrapper">
+        <div class="sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="{% url 'dashboard-index' %}"><i class="fas fa-house"></i>Dashboard</a></li>
+                <li><a href="{% url 'user-profile' %}"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="{% url 'user-logout' %}"><i class="fas fa-right-from-bracket"></i>Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sidebar End -->
+
+<div class="container">
+    <div class="content-wrapper">
+        <div class="order-form">
+            <form method="POST" >
+                {% csrf_token %}
+                <h2>Make Order</h2>
+                <label for="name">Name:</label>
+                {% comment %} <input type="text" id="name" name="name" required><br> {% endcomment %}
+                {{form.product}}
+            
+                <label for="quantity">Quantity:</label>
+                {% comment %} <input type="number" id="quantity" name="quantity" required><br> {% endcomment %}
+                {{form.order_quantity}}
+            
+                {% comment %} <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="Category 1">Stationary</option>
+                    <option value="Category 2">Electronics</option>
+                    <option value="Category 3">Grocery</option>
+                    <!-- Add more options as needed -->
+                </select><br> 
+                {{form.category}} {% endcomment %}
+            
+                <button type="submit">Make Order</button>
+            </form>
+        </div>
+
+        <div class="user-table">
+            <table class="user-order-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    {% if order.staff == user %}
+                    <tr>
+                        <td>{{ order.product.name }}</td>
+                        <td>{{ order.product.category }}</td>
+                        <td>{{order.order_quantity }}</td>
+                        <td>{{order.date }}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

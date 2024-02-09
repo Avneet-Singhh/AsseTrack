@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-PRrgQVJ8NNHGieOA1grGdCTIt4h21CzJs6SnWH4YMQ6G5F5+IEzOHz67L4SQaF0o" crossorigin="anonymous">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body{
+            min-height: 100vh;
+            background-color: black
+        }
+
+        .sidebar{
+            position: absolute;
+            width: 60px;
+            height: 100vh;
+            background: #fff;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+
+        .sidebar:hover{
+            width: 200px;
+        }
+
+        .sidebar ul{
+            position: relative;
+            height: 100vh;
+        }
+
+        .sidebar ul li{
+            list-style: none;
+
+        }
+
+        .sidebar ul li:hover{
+            background: #f3f3f3;
+        }
+
+        .sidebar ul li a{
+            position: relative;
+            display: flex;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a .icon{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .sidebar ul li a .text{
+            position: relative;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            font-size: 1em;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .sidebar ul li.logo{
+            margin-bottom: 50px;
+        }
+
+        .sidebar ul li.logo:hover{
+            background: #fff;
+            width: 100%;
+        }
+
+        .sidebar ul li.logo .icon{
+            font-size: 2em;
+        }
+
+        .sidebar ul li.logo .text{
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        .bottom{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li class="logo">
+                <a href="">
+                    <span class="icon"><ion-icon name="logo-microsoft"></ion-icon></span>
+                    <span class="text">AsseTrack</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon"><ion-icon name="speedometer-outline"></ion-icon></span>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                    <span class="text">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon"><ion-icon name="business-outline"></ion-icon></span>
+                    <span class="text">Brands</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon"><ion-icon name="cube-outline"></ion-icon></span>
+                    <span class="text">Products</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
+                    <span class="text">Staff</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="icon"><ion-icon name="cart-outline"></ion-icon></span>
+                    <span class="text">Orders</span>
+                </a>
+            </li>
+            <div class="bottom">
+                <li>
+                    <a href="">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="text">Logout</span>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

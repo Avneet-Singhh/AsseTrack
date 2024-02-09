@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css"
+        integrity="sha384-PRrgQVJ8NNHGieOA1grGdCTIt4h21CzJs6SnWH4YMQ6G5F5+IEzOHz67L4SQaF0o" crossorigin="anonymous">
+    <style>
+        /* .gradient-custom-3 {
+            background: #84fab0;
+
+            background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+
+            background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+        } */
+
+        .gradient-custom-4 {
+            background: rgba(1,81,128,1);
+
+            color: whitesmoke !important; 
+
+        }
+    </style>
+</head>
+
+<body style="background: rgb(2,0,36);
+background: linear-gradient(360deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(1,81,128,1) 100%)" >
+
+    <div class="container">
+        <section class="vh-100 bg-image">
+            <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+                <div class="container h-100">
+                    <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                            <div class="card" style="border-radius: 15px;">
+                                <div class="card-body p-5">
+                                    <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-outline mb-4">
+                                            <input type="text" name="username" class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example1cg">Your Name</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="email" name="email" class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example3cg">Your Email</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="password" name="password1"
+                                                class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example4cg">Password</label>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <input type="password" name="password2"
+                                                class="form-control form-control-lg" />
+                                            <label class="form-label" for="form3Example4cdg">Repeat your
+                                                password</label>
+                                        </div>
+
+                                        <div class="d-flex justify-content-center">
+                                            <button type="button"
+                                                class="btn btn-block btn-lg gradient-custom-4 text-body"
+                                                style="width: 100%;">Register</button>
+                                        </div>
+
+                                        <p class="text-center text-muted mt-5 mb-0">Have already an account? <a
+                                                href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
+
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

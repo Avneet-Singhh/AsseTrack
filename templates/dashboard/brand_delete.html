@@ -1,0 +1,48 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %}Delete Page{% endblock title %}
+
+{% block body %}
+
+<section class="home">
+    {% include "partials/navbar.html" %}
+
+    <div class="container">
+        <div class="delete-container">
+            <h3>Delete Brand</h3>
+            <hr>
+            <div class="delete-alert">
+                <h4>Are you sure you want to Remove this Brand?</h4>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="btn-container">
+                        <a class="btn btn-primary" href="{% url 'dashboard-brand' %}">Cancel</a>
+                        <button class= "btn btn-danger" type="submit">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="footer-left">
+            Copyright © Your Website 2023
+        </div>
+        <div class="footer-right">
+            <a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a>
+        </div>
+    </footer>
+
+</section>
+
+
+{% endblock body %}

@@ -1,0 +1,201 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %}Products{% endblock title %}
+
+{% block body %}
+
+{% include "partials/navbar.html" %}
+
+{% comment %} <div class="container">
+    <div class="content-wrapper">
+        <div class="form-container">
+            <form method="POST" >
+                {% csrf_token %}
+                <h2>Add Product</h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                {{form.name}}
+            
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required><br>
+                {{form.quantity}}
+            
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="Category 1">Stationary</option>
+                    <option value="Category 2">Electronics</option>
+                    <option value="Category 3">Grocery</option>
+                </select><br>
+                {{form.category}}
+            
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Activity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.category }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>
+                            <a href="{% url 'dashboard-product-update' item.id %}" class="Edit">Edit</a>
+                            <a href="{% url 'dashboard-product-delete' item.id %}" class="Delete">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> {% endcomment %}
+
+<section class="home">
+    {% include "partials/navbar.html" %}
+
+    <div class="text">Product Details</div>
+
+    <div class="product-container">
+        <div class="product-card-box">
+            <div class="product-card-container">
+
+                <div class="product-card">
+                    <a href="#">
+                        <div class="product-card-content">
+                            <h3>Count of all Products</h3>
+                            <h2>{{ product_count }} Products</h2>
+                            <div class="product-card-icon" style="background-color: #36A2EB;">
+                                <i class='bx bx-package'></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="product-card">
+                    <a href="#">
+                        <div class="product-card-content">
+                            <h3>Count of Active-Product</h3>
+                            <h2>3 Products</h2>
+                            <div class="product-card-icon" style="background-color: #FF9F40;">
+                                <i class='bx bx-bar-chart-alt-2'></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin: 0;">
+        <div class="product-content">
+            <div class="product-form">
+                <div class="border border-dark-subtle bg-white p-3" style="width: 320px;">
+                    <h5>Add Products</h5>
+                    <hr>
+                    <form method="POST">
+                        {% csrf_token %}
+            
+                        <div class="mb-0">
+                            <label for="id_name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="id_name" name="name" aria-describedby="emailHelp" placeholder="Product Name">
+                        </div>
+                        <div class="mb-0">
+                            <label for="id_category" class="form-label">Category</label>
+                            <select class="form-select" id="id_category" name="category" aria-label="Default select example">
+                                <option selected>Choose...</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Stationary">Stationary</option>
+                                <option value="Grocery">Grocery</option>
+                            </select>
+                        </div>
+                        <div class="mb-0">
+                            <label for="id_quantity" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" id="id_quantity" name="quantity" aria-describedby="emailHelp" placeholder="Quantity">
+                        </div>
+                        <div class="mb-0">
+                            <label for="id_brand" class="form-label">Brand</label>
+                            <select class="form-select" id="id_brand" name="brand" aria-describedby="emailHelp">
+                                <option selected>Choose...</option>
+                                {% for brand in brands %}
+                                    <option value="{{ brand.id }}">{{ brand.brand_name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-1">
+                            <label for="id_status" class="form-label">Status</label>
+                            <select class="form-select" id="id_status" name="status" aria-label="Default select example">
+                                <option selected>Choose...</option>
+                                <option value="Available">Available</option>
+                                <option value="Not-Available">Not-Available</option>
+                            </select>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary" type="submit">Add Product</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="product-table" style="background-color: white;">
+                <table id="example" class="table table-striped nowrap" style="width:100%">
+                    <thead style="background: #0d6efd;">
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>brand</th>
+                            <th>Status</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in items %}
+                            <tr>
+                                <td>{{ item.name }}</td>
+                                <td>{{ item.category }}</td>
+                                <td>{{ item.quantity }}</td>
+                                <td>{{ item.brand }}</td>
+                                <td>{{ item.status }}</td>
+                                <td><a class="btn btn-primary btn-sm" href="{% url 'dashboard-product-update' item.id %}">Edit</a></td>
+                                <td><a class="btn btn-danger btn-sm" href="{% url 'dashboard-product-delete' item.id %}">Delete</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="footer-left">
+            Copyright © Your Website 2023
+        </div>
+        <div class="footer-right">
+            <a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a>
+        </div>
+    </footer>
+
+</section>
+
+{% endblock body %}

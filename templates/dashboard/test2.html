@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphs</title>
+
+    <!-- Chartjs CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        .graph_container {
+            /* font-family: sans-serif; */
+            /* margin-left: 120px; */
+            margin-bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh;
+        }
+
+        .graph-container {
+            margin: 0 10px;
+        }
+
+        .graph {
+            width: 570px;
+            height: 500px;
+            margin: 0;
+        }
+
+        .graph-1 {
+            text-align: center;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .graph-2 {
+            text-align: center;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .graph-title {
+            color: royalblue;
+            padding: 10px;
+            background-color: #ddedfa;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="graph_container">
+            <div class="graph-container">
+                <div class="graph-1">
+                    <div class="graph-title">
+                        <h2>Orders-Graph</h2>
+                    </div>
+                    <div class="graph">
+                        <canvas id="barchart" width="500" height="450"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="graph-container">
+                <div class="graph-2">
+                    <div class="graph-title">
+                        <h2>Products-Graph</h2>
+                    </div>
+                    <div class="graph">
+                        <canvas id="doughnut" width="500" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const ctx1 = document.getElementById('barchart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('doughnut').getContext('2d');
+        new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+{% extends "partials/base.html" %}
+{% load static %}
+
+{% block title %}Orders{% endblock title %}
+
+{% block body %}
+
+<!-- <div class="container">
+    <div class="order_table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Ordered By</th>
+                    <th>Date and Time</th>
+            </thead>
+            <tbody>
+                {% for orders in orders %}
+                <tr>
+                    <td>{{ orders.product }}</td>
+                    <td>{{ orders.product.category }}</td>
+                    <td>{{ orders.order_quantity }}</td>
+                    <td>{{ orders.staff.username }}</td>
+                    <td>{{ orders.date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div> -->
+
+<section class="home">
+    {% include "partials/navbar.html" %}
+
+    <div class="text">Order Details</div>
+
+    <div class="order-container">
+        <div class="order-card-box">
+            <div class="order-card-container">
+
+                <div class="order-card">
+                    <a href="#">
+                        <div class="order-card-content">
+                            <h3>Count of all Orders</h3>
+                            <h2>4 Orders</h2>
+                            <div class="order-card-icon" style="background-color: #3EDCDF;">
+                                <i class='bx bx-cart-alt'></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin: 0;">
+        <div class="order-table" style="background-color: white;">
+            <table id="example" class="table table-striped nowrap" style="width:100%">
+                <thead style="background: #0d6efd;">
+                    <tr>
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Ordered By</th>
+                        <th>Date & Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Keyboard</td>
+                        <td>Electronic</td>
+                        <td>1</td>
+                        <td>admin</td>
+                        <td>42069-42069</td>
+                    </tr>
+                    <tr>
+                        <td>Coffee</td>
+                        <td>Grocery</td>
+                        <td>10</td>
+                        <td>user1</td>
+                        <td>42069-42069</td>
+                    </tr>
+                    <tr>
+                        <td>Cake</td>
+                        <td>Grocery</td>
+                        <td>3</td>
+                        <td>admin</td>
+                        <td>42069-42069</td>
+                    </tr>
+                    <tr>
+                        <td>Notebook</td>
+                        <td>Stationary</td>
+                        <td>10</td>
+                        <td>user2</td>
+                        <td>42069-42069</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function () {
+            $('#example').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="footer-left">
+            Copyright © Your Website 2023
+        </div>
+        <div class="footer-right">
+            <a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a>
+        </div>
+    </footer>
+
+</section>
+
+
+{% endblock body %}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .card-box {
+            margin: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 1200px;
+            height: 260px;
+            border-radius: 30px;
+        }
+
+        .header {
+            border-radius: 30px 30px 0 0;
+            background-color: royalblue; /* Match the box-shadow color */
+            color: whitesmoke;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .card {
+            font-family: sans-serif;
+            width: 300px;
+            height: 130px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            margin-top: 35px;
+            position: relative;
+        }
+
+        .card-content h1 {
+            margin: 10px;
+        }
+
+        .card-content h2 {
+            margin-top: 15px;
+            margin-left: 10px;
+            color: #3498db; /* Match the box-shadow color */
+        }
+
+        .card:nth-child(2) h2{
+            color: #f7ca18;
+        }
+
+        .card:nth-child(3) h2{
+            color: #3edcdf;
+        }
+
+        .card:nth-child(1) {
+            box-shadow: -8px 0 0 #3498db, 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .card:nth-child(2) {
+            box-shadow: -8px 0 0 #f7ca18, 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .card:nth-child(3) {
+            box-shadow: -8px 0 0 #3edcdf, 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Style for the circle container */
+        .card-content .card-icon {
+            position: absolute;
+            top: 60%;
+            right: 10px;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: white;
+        }
+
+        /* Remove underline from links in headers */
+        .card a {
+            text-decoration: none;
+            color: black;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card-box">
+            <div class="header">
+                <h2>Dashboard Statistics</h2>
+            </div>
+            <div class="card-container">
+                <div class="card">
+                    <a href="#">
+                        <div class="card-content">
+                            <h2>Count of all Products</h2>
+                            <h1>50 Products</h1>
+                            <div class="card-icon" style="background-color: #3498db;">
+                                <i class="fas fa-box"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="#">
+                        <div class="card-content">
+                            <h2>Count of all Staff</h2>
+                            <h1>20 Staff</h1>
+                            <div class="card-icon" style="background-color: #f7ca18;">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="#">
+                        <div class="card-content">
+                            <h2>Count of all Orders</h2>
+                            <h1>100 Orders</h1>
+                            <div class="card-icon" style="background-color: #3edcdf;">
+                                <i class="fas fa-truck-fast"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

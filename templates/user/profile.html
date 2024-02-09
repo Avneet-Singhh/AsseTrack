@@ -1,0 +1,57 @@
+{% extends "partials/base.html" %}
+{% load static %} 
+{% block title %}Profile Page{% endblock title %}
+
+{% block body %}
+
+{% if user.is_authenticated and user.is_staff and user.is_superuser %}
+<!-- Sidebar -->
+<div class="container">
+    <div class="wrapper">
+        <div class="sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="{% url "dashboard-index" %}"><i class="fas fa-house"></i>Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="{%url 'dashboard-product'%}"><i class="fas fa-box"></i>Products</a></li>
+                <li><a href="{%url 'dashboard-staff'%}"><i class="fas fa-users"></i>Staff</a></li>
+                <li><a href="{%url 'dashboard-order'%}"><i class="fas fa-truck-fast"></i>Orders</a></i></li>
+                <li><a href="{% url 'user-logout' %}"><i class="fas fa-right-from-bracket"></i>Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sidebar End -->
+
+{% else %}
+
+<div class="container">
+    <div class="wrapper">
+        <div class="sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="{% url "dashboard-index" %}"><i class="fas fa-house"></i>Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-user"></i>Profile</a></li>
+                <li><a href="{% url 'user-logout' %}"><i class="fas fa-right-from-bracket"></i>Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+<div class="container profile-container">
+    <h1>Profile details</h1>
+    <div class="profile-details">
+        <img class="profile-image" src="{% static 'images/profile.jpg' %}" alt="Profile Image">
+        <h2>Name: John Doe</h2>
+        <h2>Email: johndoe@example.com</h2>
+        <h2>Phone: (123) 456-7890</h2>
+        <h2>Address: 123 Main St, City, Country</h2>
+    </div>
+    <div class="profile-edit">
+        <a href="#" class="btn">Edit Profile</a>
+    </div>
+</div>
+
+{% endblock body %}

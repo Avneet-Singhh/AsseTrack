@@ -1,0 +1,370 @@
+/* .wrapper {
+    display: flex;
+    position: relative;
+    margin-top: 50px; 
+}
+
+.sidebar{
+    position: fixed;
+    width: 200px;
+    height: 700px;
+    background: #015182;
+    padding: 30px 0;
+}
+
+.sidebar h3{
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar h3 .mfa{
+    margin-right: 5px;
+}
+
+.sidebar ul li{
+    list-style-type: none;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-top: 1px solid rgba(225, 225, 225, 0.08);
+}
+
+.sidebar ul li a{
+    text-decoration: none;
+    color: #85bbdd;
+    display: block;
+}
+
+.sidebar ul li a .fas{
+    width: 25px;
+}
+
+.sidebar ul li:hover{
+    background-color: #4696c9;
+}
+
+.sidebar ul li:hover a{
+    color: #fff;
+}
+
+.card-box {
+    margin: 20px;
+    margin-left: 280px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 1200px;
+    height: 260px;
+    border-radius: 30px;
+}
+
+.header {
+    border-radius: 30px 30px 0 0;
+    background-color: #015182; 
+    color: whitesmoke;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card {
+    font-family: sans-serif;
+    width: 300px;
+    height: 130px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    margin-top: 35px;
+    position: relative;
+}
+
+.card-content h1 {
+    margin: 10px;
+}
+
+.card-content h2 {
+    margin-top: 15px;
+    margin-left: 10px;
+    color: #3498db; 
+}
+
+.card:nth-child(2) h2{
+    color: #f7ca18;
+}
+
+.card:nth-child(3) h2{
+    color: #3edcdf;
+}
+
+.card:nth-child(1) {
+    box-shadow: -8px 0 0 #3498db, 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card:nth-child(2) {
+    box-shadow: -8px 0 0 #f7ca18, 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card:nth-child(3) {
+    box-shadow: -8px 0 0 #3edcdf, 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-content .card-icon {
+    position: absolute;
+    top: 60%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
+.graph_container {
+    margin-top: 10px;
+    font-family: sans-serif;
+    margin-left: 120px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+.graph-container {
+    margin-top: 10px;
+    font-family: sans-serif;
+    margin-left: 120px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.graph_container {
+    margin-left: 100px;
+}
+.graph-container {
+    margin-right: 10px;
+}
+
+.graph {
+    width: 570px;
+    height: 500px;
+    margin: 0;
+}
+
+.graph-1 {
+    text-align: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.graph-2 {
+    text-align: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.graph-title {
+    color: #015182;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+} */
+
+.home {
+    position: absolute;
+    top: 0;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+
+.home .text {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 12px 60px;
+}
+
+.sidebar.close~.home {
+    left: 78px;
+    height: 100vh;
+    width: calc(100% - 78px);
+}
+
+body.dark .home .text {
+    color: var(--text-color);
+}
+
+.card-box {
+    /* margin: 20px; */
+    /* margin-top: 30px; */
+    /* margin-left: 230px; */
+    width: 1300px;
+    height: 160px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    font-family: sans-serif;
+    width: 300px;
+    height: 130px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    /* margin-top: 13px; */
+    position: relative;
+    background-color: white;
+}
+
+.card-content h2 {
+    margin: 10px;
+    font-weight: 600;
+}
+
+.card-content h3 {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-weight: 600;
+    font-size: 27px;
+    color: #36A2EB;
+    /* Match the box-shadow color */
+}
+
+.card:nth-child(1) {
+    box-shadow: -8px 0 0 #36A2EB, 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card:nth-child(2) h3 {
+    color: #F7CA18;
+}
+
+.card:nth-child(3) h3 {
+    color: #3EDCDF;
+}
+
+.card:nth-child(4) h3 {
+    color: #8D54FF;
+}
+
+.card:nth-child(2) {
+    box-shadow: -8px 0 0 #F7CA18, 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card:nth-child(3) {
+    box-shadow: -8px 0 0 #3EDCDF, 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card:nth-child(4) {
+    box-shadow: -8px 0 0 #8D54FF, 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Style for the circle container */
+.card-content .card-icon {
+    position: absolute;
+    top: 60%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+}
+
+/* Remove underline from links in headers */
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
+.graph_container {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* min-height: 50vh; */
+}
+
+.graph-container {
+    margin: 0 40px;
+    margin-bottom: 15px;
+}
+
+.graph {
+    width: 570px;
+    height: 500px;
+    margin: 0;
+    background-color: white;
+}
+
+.graph-1 {
+    text-align: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.graph-2 {
+    text-align: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.graph-title {
+    color: royalblue;
+    padding: 5px;
+    background-color: #ddedfa;
+    border-bottom: 1px solid #ccc;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--body-color);
+    padding: 20px 20px;
+    font-size: 14px;
+    color: #444;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-right {
+    flex: 1;
+    text-align: right;
+}
+
+.footer-right a {
+    text-decoration: none;
+    color: #444;
+    transition: border-bottom 0.2s;
+}
+
+.footer-right a:hover {
+    border-bottom: 1px solid #444;
+}
